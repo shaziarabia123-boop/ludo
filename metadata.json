@@ -1,0 +1,6 @@
+{
+  "name": "Ludo Master — Premium Multiplayer Board Game",
+  "description": "Play Ludo Master: the classic board game with local multiplayer, smart AI opponents, authentic safe squares and token captures, smooth animations, and audio.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

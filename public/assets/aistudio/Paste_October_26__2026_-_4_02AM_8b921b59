@@ -1,0 +1,884 @@
+# PROJECT TITLE: LUDO MASTER — PREMIUM MULTIPLAYER BOARD GAME
+
+## 1. GAME OVERVIEW AND MAIN OBJECTIVE
+
+Create a complete, professional, visually attractive, highly engaging Ludo board game called **Ludo Master**. The game must support desktop computers, laptops, tablets, and mobile phones. It must provide a smooth experience for mouse users, touchscreen users, and players using different screen sizes.
+
+The game should combine the familiar traditional Ludo experience with modern graphics, smooth animations, responsive controls, intelligent computer opponents, multiplayer gameplay, attractive sound effects, and an easy-to-understand interface.
+
+The game must feel like a finished commercial-quality game rather than a basic board-game prototype.
+
+The main objective is to move all four tokens of each player from their starting yard around the board and into their own home column. Players roll a six-sided dice, select eligible tokens, move according to the dice result, capture opponents when possible, and try to bring all four tokens safely into the final home area.
+
+The first player to move all four tokens into their home wins the match.
+
+Every game mechanic must function correctly. Dice rolls, token movement, safe squares, captures, extra turns, home entry, winning conditions, and player turns must follow consistent rules.
+
+## 2. TARGET PLATFORMS AND RESPONSIVE DESIGN
+
+Build the game for:
+
+- Desktop computers and laptops.
+- Android mobile phones.
+- iPhones.
+- Android and iPad tablets.
+- Modern web browsers.
+- Mouse, touch, and keyboard input where appropriate.
+
+The layout must automatically adapt to the available screen dimensions.
+
+### Desktop layout
+
+On desktop screens, place the Ludo board in the center of the main game area. Use a balanced two-column or three-section layout where practical.
+
+The central board should receive the greatest amount of visual attention.
+
+Place player information around the board or in a clean surrounding panel. Show each player's color, remaining tokens, completed tokens, current turn, and relevant status.
+
+Position the dice control near the active player's information. Keep turn history, sound controls, settings, and game actions accessible without covering the board.
+
+Use comfortable spacing, readable typography, subtle shadows, rounded panels, and a consistent design system.
+
+### Mobile layout
+
+On mobile screens, prioritize the board and essential controls.
+
+The board must scale proportionally and remain fully visible without unwanted horizontal scrolling. Use a square board container that preserves its aspect ratio.
+
+Place the active player's information and dice button below the board or in a compact header, depending on the screen size.
+
+Use touch targets large enough for comfortable interaction. Avoid tiny buttons, tightly packed controls, and accidental taps.
+
+Allow vertical scrolling on small screens if required, but do not let decorative panels force the board outside the viewport.
+
+The user must be able to roll the dice, select a token, inspect the current turn, and access the main menu using one hand on a typical mobile device.
+
+### Tablet layout
+
+Use a hybrid layout with a large centered board and compact player panels. Ensure that all four player colors and important game information remain readable.
+
+### Responsive behavior
+
+- Recalculate board size when the viewport changes.
+- Preserve token positions and game state during resizing.
+- Never reset an active match merely because the screen orientation changes.
+- Avoid stretched circles, distorted dice, and misaligned grid cells.
+- Support portrait and landscape layouts.
+- Respect safe areas around device notches and rounded corners.
+- Keep modals within the visible viewport.
+- Prevent page scrolling or text selection during intentional touch-based token dragging.
+- Use responsive CSS and a consistent layout system rather than hard-coded screen coordinates.
+
+## 3. VISUAL STYLE AND GRAPHIC DESIGN
+
+Use a polished, colorful, premium board-game aesthetic.
+
+The board should look clean, friendly, and immediately recognizable as traditional Ludo. Introduce subtle modern touches without making the rules confusing.
+
+### Main color palette
+
+Use four distinct player colors:
+
+- Red: #F04444
+- Green: #24B96B
+- Yellow: #F5C542
+- Blue: #3984F5
+
+Use a light cream or white background for the central board, with carefully defined grid cells, clear borders, and contrasting home areas.
+
+Use dark navy or charcoal for important text. Secondary labels should use a softer neutral color.
+
+Apply color consistently throughout the interface. A red player must have red tokens, a red player panel accent, a red home area, and a red turn indicator.
+
+Do not rely on color alone to communicate important information. Use player labels, outlines, icons, and active-turn indicators as additional signals.
+
+### Board appearance
+
+Create a symmetrical, four-player Ludo board with:
+
+- Four colored home yards.
+- Four tokens in each home yard.
+- A central home triangle or equivalent traditional finishing area.
+- Clearly marked movement paths.
+- Colored home columns.
+- Distinct starting squares.
+- Clearly marked safe squares.
+- A central finish area.
+- Correctly aligned grid cells.
+
+The board must be symmetrical and follow a coherent traditional Ludo path.
+
+Do not create decorative paths that conflict with the actual movement route.
+
+Each playable cell must have a defined logical position. The visual board and the underlying game logic must use the same route definition.
+
+### Token appearance
+
+Each token should be a glossy, attractive circular game piece matching its player's color.
+
+Give each piece subtle highlights, a small shadow, a clear outline, and enough contrast to distinguish it from the board.
+
+Tokens must remain recognizable when scaled down on small mobile screens.
+
+Use a restrained 3D effect or polished flat-design treatment. Avoid excessive effects that obscure token positions.
+
+When a token is selected, highlight it with a glowing ring, an animated outline, or a gentle bounce.
+
+When a token is eligible to move, display a clear visual indicator. When a token reaches home, show a small celebratory animation.
+
+## 4. MAIN MENU SCREEN
+
+Create a professional main menu that introduces the game and lets players start quickly.
+
+The screen should include:
+
+- Game logo and title: Ludo Master.
+- A visually attractive Ludo board illustration or animated preview.
+- A prominent Play button.
+- A Local Multiplayer option.
+- A Play Against Computer option.
+- An Online Multiplayer option, if online functionality is implemented.
+- A Rules and How to Play button.
+- A Settings button.
+- A sound toggle.
+- A privacy or information section where appropriate.
+
+Use smooth transitions between the menu and game setup screens.
+
+The Play button must be the most visually prominent action.
+
+Buttons should have clear hover, focus, pressed, and disabled states.
+
+On mobile, stack menu options vertically with sufficient spacing. On desktop, use a balanced arrangement that takes advantage of the available space.
+
+Do not display fake online player counts, fake leaderboards, or simulated matchmaking results as real data.
+
+## 5. GAME MODE SELECTION
+
+Provide several game modes.
+
+### Mode A: Local Multiplayer
+
+Allow two, three, or four human players to share the same device.
+
+Each player should have a selectable name and color.
+
+Players take turns using the same screen. Display whose turn it is and clearly indicate when the device should be passed to the next player.
+
+For two-player mode, use opposite board positions and maintain the correct movement paths.
+
+### Mode B: Play Against Computer
+
+Allow one human player to play against one, two, or three computer-controlled opponents.
+
+Offer difficulty settings:
+
+- Easy: straightforward, beginner-friendly decisions.
+- Normal: sensible movement and capture decisions.
+- Hard: stronger tactical decisions based on captures, safety, progress, and risk.
+
+The computer must obey exactly the same dice and movement rules as human players.
+
+AI opponents must never move illegally, change the dice result, or secretly ignore the rules.
+
+### Mode C: Online Multiplayer
+
+If online multiplayer is included, implement actual synchronized matches between connected players.
+
+Provide:
+
+- Room creation.
+- Join-by-code functionality.
+- Player readiness status.
+- Waiting-room interface.
+- Reconnection support where possible.
+- Turn synchronization.
+- Server-validated dice rolls and token moves.
+- Match completion and rematch options.
+
+Use an appropriate real-time backend or multiplayer service. Do not present a local simulation as real online multiplayer.
+
+If no backend is available, provide fully working local and computer modes and mark online multiplayer as unavailable rather than pretending that it works.
+
+## 6. PLAYER SETUP SCREEN
+
+Before starting a match, let users choose the number of players, game mode, and player names.
+
+Allow players to select a name, avatar, or color where appropriate.
+
+For local games, assign the four traditional colors in a consistent order: red, green, yellow, and blue.
+
+If fewer than four players participate, configure the selected colors and positions consistently.
+
+Prevent duplicate player identifiers and invalid configuration.
+
+Include a clear Start Game button and a Back button.
+
+Starting a new match should initialize a fresh game state without carrying over token positions or turn data from a previous match.
+
+## 7. LUDO BOARD AND MOVEMENT SYSTEM
+
+Build the board using a well-defined logical grid and a predefined route for each player.
+
+Every token should have an explicit state.
+
+Possible token states:
+
+1. In the starting yard.
+2. On the main movement track.
+3. On the player's private home path.
+4. Finished inside the final home area.
+
+Each token must have a unique identifier and belong to exactly one player.
+
+### Starting yard
+
+Each player begins with four tokens in their own colored starting yard.
+
+Tokens in the starting yard cannot move along the track until the player rolls the required number, normally a six.
+
+When a six is rolled, the player may bring an eligible token onto their starting square.
+
+The newly deployed token must occupy the correct starting position and become part of the normal movement system.
+
+A newly deployed token must not also move six additional spaces from the starting square unless an explicitly selected variant permits it.
+
+### Main track
+
+Once deployed, a token follows the player's predefined route around the board.
+
+Movement must proceed one cell at a time in the correct direction.
+
+The token must never jump to a visually adjacent but logically incorrect cell.
+
+For each move, calculate the destination from the token's current route index and the dice result.
+
+Animate the movement through the intermediate cells so the player can follow the journey.
+
+### Home column
+
+After completing the required circuit, the token enters its own colored home column.
+
+Only the appropriate player's tokens may use that private home path.
+
+Opponents must not capture tokens inside a protected home column.
+
+### Final home
+
+A token must reach the final home position using the correct number.
+
+If the remaining distance to the finish is less than the rolled number, the token is not eligible to move under the exact-roll rule.
+
+If no eligible token exists, the game must handle the turn according to the configured rules.
+
+## 8. DICE SYSTEM
+
+Create a six-sided dice with faces numbered one through six.
+
+The dice should be visually attractive and easy to understand.
+
+When the player rolls, animate the dice briefly with a rotation, bounce, or face-changing effect. Then reveal the final result clearly.
+
+The final result must come from a valid random number generator or a secure server-authoritative system in online mode.
+
+The visual animation must never change the actual result.
+
+### Dice interaction
+
+Players may roll the dice only when it is their turn and the game is waiting for a roll.
+
+After a roll, disable the dice control until the player completes the required action or the turn advances.
+
+If the player has legal moves, highlight the eligible tokens.
+
+If no legal moves exist, display a short explanation and advance the turn according to the rules.
+
+### Rolling a six
+
+A six should allow the player to deploy a token from the yard when possible.
+
+If a token can already move, the player may choose between deploying a new token and moving an eligible token.
+
+Under the standard rule configuration, rolling a six grants another roll after the move is completed.
+
+If the player rolls a six three consecutive times, apply the selected rule variant. A recommended traditional rule is that the third consecutive six forfeits the turn and cancels the third roll's movement.
+
+Make this behavior configurable in the rules screen because house rules differ.
+
+### Dice fairness
+
+Do not use predictable visual animation values as the actual dice outcome.
+
+Separate the dice result from the dice animation.
+
+For local gameplay, use a suitable pseudorandom number generator. For competitive online gameplay, use server-side validation and authoritative turn processing.
+
+## 9. TOKEN SELECTION AND MOVEMENT
+
+When a dice result is available, calculate all legal moves.
+
+Highlight only the tokens that can legally move.
+
+### Mouse controls
+
+Desktop users should be able to:
+
+- Click the dice to roll.
+- Click a highlighted token to move it.
+- Hover over a token to see a subtle visual response.
+- Use optional keyboard shortcuts when clearly documented.
+- Click menu and settings buttons normally.
+
+A mouse click on an ineligible token must not cause an illegal move.
+
+### Mobile touch controls
+
+Mobile users should be able to:
+
+- Tap the dice to roll.
+- Tap a highlighted token to select and move it.
+- Tap again only when a separate confirmation interaction is intentionally provided.
+- Hold and drag a token when drag interaction is enabled.
+- Release a token on a valid destination or use the drag gesture as a selection shortcut.
+
+Token dragging must not allow players to bypass the dice, jump spaces, capture incorrectly, or place tokens at arbitrary coordinates.
+
+### Hold-and-drag behavior
+
+Implement drag-and-drop as an optional input method layered over the legal movement system.
+
+When the player presses and holds a movable token, show a selected state and a subtle floating preview.
+
+During the drag, track the pointer or touch position and visually move the preview.
+
+Highlight legal destinations only.
+
+When the player releases the token:
+
+- If the release corresponds to a legal destination, complete the same validated move that a normal tap would trigger.
+- If the release is outside a legal destination, return the token to its original location.
+- If the token is not eligible, do not initiate a move.
+- If the turn changes or the game becomes locked during the gesture, cancel the drag safely.
+
+For a conventional Ludo board, moving a token through a drag gesture should not mean that the player manually controls every square. The dice result determines the distance. The gesture selects or confirms the move.
+
+Support pointer events or equivalent unified mouse and touch handling.
+
+Prevent accidental browser text selection and page dragging during active token gestures, without disabling normal page navigation elsewhere.
+
+### Ambiguous token selection
+
+If multiple tokens occupy the same square, provide a clear way to select the intended token.
+
+If multiple tokens are legal, do not move one automatically unless the game mode explicitly uses automatic move selection.
+
+## 10. CAPTURING OPPONENT TOKENS
+
+Capturing is an important part of the game.
+
+When a player's token lands on a square occupied by one or more vulnerable opponent tokens, capture them according to the configured rules.
+
+Captured tokens return to their respective starting yards.
+
+### Capture rules
+
+- Only resolve captures after a valid move is completed.
+- Never capture a token on a designated safe square.
+- Never capture a token inside its protected home column.
+- Apply the same rules to human and computer players.
+- Handle overlapping tokens deterministically.
+- Update token counts, player status, and turn information after the capture.
+
+Use a short capture animation. For example, the captured token can briefly shrink, flash, or move toward its home yard before returning to the starting position.
+
+Display a concise message such as “Token captured!” or “Back to start!”
+
+When the capture grants an extra turn under the configured rules, communicate this clearly.
+
+## 11. SAFE SQUARES AND STARTING SQUARES
+
+Clearly mark safe squares using a star, shield, or distinctive symbol.
+
+Safe squares protect tokens from capture according to the selected ruleset.
+
+Starting squares should also be visually identifiable. If the rules treat them as safe, encode that behavior explicitly rather than assuming every starting square is safe.
+
+The interface must communicate safe-square behavior without overcrowding the board.
+
+If a player lands on a safe square, show a subtle shield or protective animation.
+
+Ensure that the board artwork and game logic agree on every safe square.
+
+## 12. EXTRA TURNS AND TURN MANAGEMENT
+
+The turn system must be predictable and consistent.
+
+At all times, the game must know:
+
+- Which player is active.
+- Whether the player is waiting to roll.
+- Whether a dice result is available.
+- Which tokens are legally movable.
+- Whether an animation or move is being processed.
+- Whether an extra roll is permitted.
+- Whether the match has ended.
+
+Under the recommended standard rules, an extra turn may be granted for rolling a six, capturing an opponent, or reaching the final home position, depending on the selected ruleset.
+
+These rewards must be configurable because not every Ludo variant uses the same extra-turn rules.
+
+Do not grant duplicate extra turns accidentally when a move both captures an opponent and reaches a special destination.
+
+Define an explicit rule for combining turn rewards. A recommended approach is to grant one additional turn for the completed move unless the selected variant specifies otherwise.
+
+The game must never allow two players to act simultaneously in local mode.
+
+## 13. WINNING CONDITIONS
+
+A player wins when all four of their tokens have reached their final home positions.
+
+When a player wins:
+
+- Complete any pending movement animation.
+- Lock further moves.
+- Display a polished victory overlay.
+- Highlight the winning player's color and name.
+- Show a celebratory animation or confetti.
+- Play an optional victory sound.
+- Display a Play Again button.
+- Display a Return to Menu button.
+- Offer a rematch option for multiplayer games.
+
+For games with three or four human players, decide whether the game ends immediately at the first winner or continues to determine the remaining rankings. Make this behavior consistent with the chosen game mode.
+
+Do not declare victory based only on the number of tokens visually inside home. Check the authoritative logical state.
+
+## 14. COMPUTER PLAYER ARTIFICIAL INTELLIGENCE
+
+Computer opponents should make legal and understandable decisions.
+
+The AI must use the same legal-move calculation as human players.
+
+### Easy AI
+
+Prefer straightforward decisions, such as:
+
+- Bringing a token out when useful.
+- Moving a token toward home.
+- Capturing an opponent when convenient.
+- Avoiding obviously unsafe choices when a safer move is available.
+
+### Normal AI
+
+Consider:
+
+- Capture opportunities.
+- Progress toward home.
+- Vulnerable token positions.
+- Deployment opportunities.
+- Whether a token is near the finish.
+- Whether a move provides a useful extra turn.
+
+### Hard AI
+
+Evaluate possible moves using a weighted scoring system.
+
+Example priorities:
+
+1. Complete a token's journey when a legal exact roll permits it.
+2. Capture a valuable opponent token when the benefit is meaningful.
+3. Protect a token at risk of capture.
+4. Bring a token out of the yard when deployment improves the position.
+5. Advance tokens toward the home column.
+6. Prefer safe squares when the alternatives are similarly valuable.
+7. Avoid wasting a move that could finish a token.
+
+The AI should not know future dice results or receive information that a human player cannot access.
+
+Add a brief, natural delay before computer moves so gameplay feels understandable rather than instantaneous.
+
+Show a subtle “Computer is thinking...” status during this delay.
+
+The delay must not block the interface or prevent the user from opening permitted menus.
+
+## 15. PLAYER STATUS AND GAME INFORMATION
+
+Each player panel should display:
+
+- Player name.
+- Player color.
+- Avatar or color symbol.
+- Current turn indicator.
+- Four token status indicators.
+- Number of tokens in the yard.
+- Number of tokens on the track.
+- Number of tokens in home.
+- A compact move or capture notification when relevant.
+
+Use a visible active-turn border, glow, or badge.
+
+The active player must be identifiable even when sound is disabled.
+
+When a player rolls the dice, display the result near the dice control and, if appropriate, in a small event log.
+
+Keep the board itself visually uncluttered.
+
+## 16. ANIMATIONS AND TRANSITIONS
+
+Use polished, short animations that communicate the game's state.
+
+Include:
+
+- Dice rolling animation.
+- Token selection highlight.
+- Step-by-step token movement.
+- Token deployment animation.
+- Capture animation.
+- Safe-square arrival effect.
+- Home-entry animation.
+- Victory celebration.
+- Menu transition.
+- Button press feedback.
+- Player-turn transition.
+
+Animations should feel responsive, not slow or excessive.
+
+Use easing curves and short durations appropriate for a casual board game.
+
+For normal token movement, animate across the required number of squares with a duration that remains comfortable on mobile devices. Avoid a long delay for a six-space move.
+
+Maintain a single authoritative token position in game logic. The animation should render the transition between the previous and final states without changing the underlying rule calculations.
+
+Prevent duplicate input while a move is being resolved.
+
+Support reduced-motion preferences. When reduced motion is enabled, use simpler transitions without removing essential state indicators.
+
+## 17. SOUND EFFECTS AND MUSIC
+
+Provide optional sound effects for:
+
+- Dice roll.
+- Token movement.
+- Token deployment.
+- Token capture.
+- Token reaching home.
+- Turn change.
+- Button click.
+- Victory.
+- Error or invalid selection.
+
+Background music may be included as an optional setting, but it should not overwhelm the game.
+
+Provide independent controls for sound effects and music where possible.
+
+Persist the player's sound preferences between sessions when storage is available.
+
+Respect browser autoplay restrictions. Begin audio only after a permitted user interaction when required.
+
+All sounds must have suitable volume levels and must not play repeatedly due to animation rerenders or duplicate event handling.
+
+If sound assets are unavailable, use valid licensed or original audio assets rather than broken file paths.
+
+## 18. GAME SETTINGS
+
+Create a settings screen containing:
+
+- Sound effects: on/off.
+- Background music: on/off.
+- Animation intensity: normal/reduced.
+- Dice animation speed.
+- Board appearance, if alternate themes exist.
+- Rules and extra-turn options.
+- Optional confirmation before restarting a match.
+- Language selection if multiple languages are implemented.
+
+Provide a clear Save or Apply action when settings require confirmation.
+
+Include a Reset to Defaults option with an appropriate confirmation prompt.
+
+Never reset an active match just because the user changes the sound or display settings.
+
+## 19. RULES AND HOW-TO-PLAY SCREEN
+
+Create a clear tutorial for new players.
+
+Explain the following in simple language:
+
+1. Each player has four tokens.
+2. Roll the dice to determine movement.
+3. A six is normally required to deploy a token from the starting yard.
+4. Select an eligible token after rolling.
+5. Move the token the number of spaces shown.
+6. Follow your own route toward the home column.
+7. Capture vulnerable opponents by landing on their square.
+8. Safe squares protect tokens according to the rules.
+9. Reach the final home using the required number.
+10. The first player to finish all four tokens wins.
+
+Include a visual example of a dice roll and a token move.
+
+Explain that some rules vary between Ludo versions, especially extra turns, consecutive sixes, safe squares, and finishing rules.
+
+Display the exact rules selected for the current match.
+
+Include a Back to Game button so players can return without losing progress.
+
+## 20. GAME STATE AND TECHNICAL ARCHITECTURE
+
+Separate game logic from presentation.
+
+Use a clear architecture containing:
+
+- Board rendering.
+- Player and token models.
+- Dice generation.
+- Turn management.
+- Legal move calculation.
+- Capture resolution.
+- Home-entry logic.
+- AI decision-making.
+- Animation management.
+- Sound management.
+- Responsive input handling.
+- Match completion.
+- Optional online synchronization.
+
+Represent the match using structured state.
+
+Example conceptual state:
+
+GameState:
+- players
+- activePlayerIndex
+- diceValue
+- phase
+- consecutiveSixCount
+- selectedTokenId
+- legalMoves
+- moveHistory
+- winner
+- rulesConfiguration
+
+Each player should contain a stable player ID, name, color, controller type, and four token objects.
+
+Each token should contain a stable token ID, owning player ID, logical position, route index when applicable, and completion status.
+
+Use a single source of truth for token positions.
+
+### State transitions
+
+Use an explicit state machine, for example:
+
+- SETUP
+- WAITING_FOR_ROLL
+- SELECTING_TOKEN
+- MOVING_TOKEN
+- RESOLVING_CAPTURE
+- ENDING_TURN
+- MATCH_FINISHED
+
+Reject actions that are invalid for the current state.
+
+For example, rolling during a token animation must not create a second dice result.
+
+### Legal move calculation
+
+Implement a central function that accepts the current state, player, token, and dice result, and returns whether the move is legal and its destination.
+
+Both human input and AI decisions must use this function.
+
+Never trust a visual highlight alone to authorize a move.
+
+### Move resolution
+
+For each move:
+
+1. Validate the current player.
+2. Validate the dice result.
+3. Validate the selected token.
+4. Calculate the destination.
+5. Apply the move.
+6. Resolve captures.
+7. Resolve home entry and completion.
+8. Evaluate extra-turn rules.
+9. Check for a winner.
+10. Advance or retain the turn.
+11. Update the interface.
+
+Ensure that the operation cannot be applied twice to the same input event.
+
+For online multiplayer, validate all important actions on the server.
+
+## 21. GAME SAVE AND RESUME
+
+If persistence is available, allow local games to resume after a page refresh or temporary interruption.
+
+Store the relevant match state, player configuration, rules, and settings.
+
+Validate stored data before loading it.
+
+If the saved state is invalid or incompatible with the current game version, provide a clear message and offer to start a new game rather than crashing.
+
+Do not store passwords or sensitive personal information in local game storage.
+
+For online games, the server should be authoritative for match state. Local storage may be used to remember room information, but it must not override the server's validated state.
+
+## 22. ACCESSIBILITY AND USABILITY
+
+Make the game comfortable for a broad range of players.
+
+Include:
+
+- High-contrast text.
+- Visible focus indicators.
+- Clear labels for buttons.
+- Tooltips on desktop where useful.
+- Large touch targets.
+- Distinct active-player indicators.
+- Accessible names for dice controls and tokens.
+- Keyboard navigation for menus.
+- Optional reduced-motion mode.
+- Readable status messages.
+- Text descriptions for important events.
+
+Where practical, support keyboard controls for desktop users without making the keyboard mandatory.
+
+Do not communicate important game information through sound alone.
+
+Avoid flashing effects that could be uncomfortable for sensitive players.
+
+## 23. ERROR HANDLING AND EDGE CASES
+
+Handle all important situations without crashing.
+
+Examples include:
+
+- A player rolls a six but has no token available to deploy.
+- A player has no legal moves.
+- Several tokens are on the same square.
+- A token needs an exact roll to finish.
+- A capture happens on a square with multiple tokens.
+- A player attempts to select an ineligible token.
+- A player clicks the dice repeatedly.
+- The window is resized during movement.
+- The player switches device orientation.
+- A computer opponent is taking its turn.
+- A stored match contains invalid data.
+- An online player disconnects.
+- A network action arrives twice.
+- A match ends while an input event is pending.
+
+Every edge case should have a deterministic and testable outcome.
+
+Invalid actions should be ignored or explained without corrupting the match state.
+
+## 24. PERFORMANCE OPTIMIZATION
+
+The game must remain smooth on mid-range mobile devices and typical desktop computers.
+
+Use efficient rendering and avoid rebuilding the entire board unnecessarily after every small state change.
+
+Animate only the elements that need to move.
+
+Keep token coordinates and route calculations separate from display dimensions.
+
+Avoid excessive shadow blur, large particle effects, and expensive animation loops on low-powered devices.
+
+Load audio and image assets efficiently.
+
+Show a suitable loading state if initialization takes time.
+
+Do not display a fake loading percentage when actual progress is unavailable.
+
+The game must not depend on a high-speed internet connection for local multiplayer or local AI gameplay.
+
+## 25. SECURITY AND ONLINE FAIR PLAY
+
+If online multiplayer is supported:
+
+- Validate dice rolls and moves on the server.
+- Confirm that the player owns the active turn.
+- Reject illegal movement requests.
+- Prevent repeated move submissions.
+- Validate room membership.
+- Handle reconnects safely.
+- Avoid trusting client-supplied winner states.
+- Prevent a client from arbitrarily modifying another player's tokens.
+- Use secure communication and appropriate rate limits.
+
+Do not expose private room credentials or authentication tokens in public game logs.
+
+For local play, keep the architecture simple while still validating all moves through the same rules engine.
+
+## 26. FINAL QUALITY ASSURANCE CHECKLIST
+
+Before considering the game complete, verify all of the following:
+
+### Core gameplay
+- All four player colors work.
+- Every player has four tokens.
+- Dice results are always between one and six.
+- Tokens deploy correctly.
+- Tokens follow the correct route.
+- Captures work correctly.
+- Safe squares are respected.
+- Home columns are protected.
+- Exact-roll finishing works.
+- Extra turns follow the selected rules.
+- The winner is detected correctly.
+- No player can move during another player's turn.
+
+### Controls
+- Mouse clicks work.
+- Touch input works.
+- Hold-and-drag works as an optional selection method.
+- Invalid drag releases return tokens to their original positions.
+- Repeated clicks cannot duplicate a move.
+- Menus and settings remain usable during normal gameplay.
+- The dice becomes available again at the correct time.
+
+### Responsive design
+- Desktop layout is balanced.
+- Mobile layout fits the board to the screen.
+- Tablet layout remains readable.
+- Portrait and landscape orientations work.
+- Resizing never corrupts token positions.
+- No important control is hidden or clipped.
+- Text remains readable at small sizes.
+
+### Visual quality
+- Board colors are consistent.
+- Tokens align with the logical grid.
+- Animations do not overlap incorrectly.
+- Player turns are always visible.
+- Victory and capture effects work.
+- Sound settings work correctly.
+- Reduced-motion settings work.
+
+### Reliability
+- No broken asset references.
+- No fatal console errors.
+- No illegal moves.
+- No duplicate turn advancement.
+- No corrupted game state after resizing.
+- New games start cleanly.
+- Saved games validate correctly.
+- Online features, if offered, connect to a real backend.
+
+## 27. FINAL DEVELOPMENT REQUIREMENT
+
+Deliver a complete, playable, polished Ludo game rather than a static board mockup.
+
+Prioritize correct rules, responsive layout, intuitive controls, fair gameplay, and reliable state management before adding decorative effects.
+
+The finished game should be colorful, smooth, professional, engaging, and easy for beginners to understand.
+
+Every visible button must perform its advertised action. Every selectable token must obey the rules. Every animation must reflect the actual game state.
+
+The result must work on mobile and desktop, support mouse and touch controls, and provide a complete match from player setup to victory.
+
+If a feature requires a backend, external service, or unavailable asset, clearly identify that dependency and never pretend the feature is operational.
+
+Build and test the core game first, then polish the visual presentation, animations, audio, AI difficulty, and optional multiplayer features.
+
+**Final objective: Create Ludo Master as a complete premium-quality digital Ludo experience that players can enjoy alone, with friends on one device, or online when real multiplayer infrastructure is available.**
